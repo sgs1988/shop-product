@@ -1,3 +1,16 @@
+# Prerequsiste  installation
+Download "Git Bash" for CLI 
+
+
+Run the command in git bash to install angular 
+>npm install -g @angular/cli
+
+Go to root folder and run command
+>npm install
+
+To run the project 
+>ng serve
+
 # ShopProduct
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.

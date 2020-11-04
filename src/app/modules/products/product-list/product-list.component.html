@@ -1,13 +1,16 @@
-<div class="container-fluid">
-  <h1>Products List</h1>
+<div class="row">
   <div class="row">
-    <div class="col-xs-12 col-md-4 product" *ngFor="let item of products.groups; let i = index" data-toggle="modal" data-target="#myModal" (click)="overlayProduct(item.images, item.name)">
-      <div>{{item.name}}</div>
-      <div>
-        <img src="{{item.hero.href}}" />
+    <div class="col-xs-12 col-md-4 product text-center" *ngFor="let item of products.groups; let i = index" data-toggle="modal" data-target="#myModal" (click)="overlayProduct(item.images, item.name)">
+      <div class="itemProdcut text-center row">
+        <div class="productname text-center col-xs-12">{{item.name}}</div>
+        <div class="col-xs-12 text-center itemImage">
+          <img src="{{item.hero.href}}" />
+        </div>
+        <div class="col-xs-12 text-center itemprice">
+          <div *ngIf="item.price">{{item.price.regular | currency}}</div>
+          <div *ngIf="item.priceRange">{{item.priceRange.selling.high | currency}}</div>
+        </div>
       </div>
-      <div *ngIf="item.price">{{item.price.regular | currency}}</div>
-      <div *ngIf="item.priceRange">{{item.priceRange.selling.high | currency}}</div>
     </div>
   </div>
 
@@ -35,7 +38,7 @@
           <!-- The slideshow -->
           <div class="carousel-inner">
             <div class="carousel-item" *ngFor="let item of productImages; let ind = index" [ngClass]="{'active': ind === 0}">
-              <img src="{{item.href}}" width="100%" height="363">
+              <img src="{{item.href}}" height="363">
             </div>
           </div>
 
@@ -57,5 +60,4 @@
       </div>
     </div>
   </div>
-
 </div>
